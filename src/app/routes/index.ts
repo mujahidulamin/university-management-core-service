@@ -1,9 +1,14 @@
 import express from 'express';
-import { AcademicSemesterRoutes } from '../modules/academicSemester/academicSemester.routes';
-import { academicFacultyRoutes } from '../modules/academicFaculty/academicFaculty.routes';
 import { academicDepartmentRoutes } from '../modules/academicDepartment/academicDepartment.routes';
+import { academicFacultyRoutes } from '../modules/academicFaculty/academicFaculty.routes';
+import { AcademicSemesterRoutes } from '../modules/academicSemester/academicSemester.routes';
+import { buildingRoutes } from '../modules/building/building.routes';
+import { courseRoutes } from '../modules/course/course.routes';
 import { facultyRoutes } from '../modules/faculty/faculty.routes';
+import { roomRoutes } from '../modules/room/room.routes';
+import { semesterRegistrationRoutes } from '../modules/semesterRegistration/semesterRegistration.routes';
 import { studentRoutes } from '../modules/student/student.routes';
+import { offeredCourseRoutes } from '../modules/offeredCourse/offeredCourse.routes';
 
 const router = express.Router();
 
@@ -15,32 +20,40 @@ const moduleRoutes = [
   },
   {
     path: '/academic-faculties',
-    route: academicFacultyRoutes
+    route: academicFacultyRoutes,
   },
   {
     path: '/academic-departments',
-    route: academicDepartmentRoutes
+    route: academicDepartmentRoutes,
   },
   {
     path: '/faculties',
-    route: facultyRoutes
+    route: facultyRoutes,
   },
   {
     path: '/students',
-    route: studentRoutes
+    route: studentRoutes,
   },
-  // {
-  //   path: '/buildings',
-  //   route: buildingRoutes
-  // },
-  // {
-  //   path: '/rooms',
-  //   route: roomRoutes
-  // },
-  // {
-  //   path: '/courses',
-  //   route: courseRoutes
-  // }
+  {
+    path: '/buildings',
+    route: buildingRoutes,
+  },
+  {
+    path: '/rooms',
+    route: roomRoutes,
+  },
+  {
+    path: '/courses',
+    route: courseRoutes,
+  },
+  {
+    path: '/semester-registration',
+    route: semesterRegistrationRoutes,
+  },
+  {
+    path: '/offered-courses',
+    route: offeredCourseRoutes
+  },
 ];
 
 moduleRoutes.forEach(route => router.use(route.path, route.route));
