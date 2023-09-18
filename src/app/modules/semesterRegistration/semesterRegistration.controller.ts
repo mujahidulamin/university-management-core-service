@@ -122,30 +122,45 @@ const confirmMyRegistration = catchAsync(
   }
 );
 
-
 const getMyRegistration = catchAsync(async (req: Request, res: Response) => {
   const user = (req as any).user;
-  const result = await SemesterRegistrationService.getMyRegistration(user.userId)
+  const result = await SemesterRegistrationService.getMyRegistration(
+    user.userId
+  );
   sendResponse(res, {
-      statusCode: httpStatus.OK,
-      success: true,
-      message: 'My registration data fetched!',
-      data: result
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'My registration data fetched!',
+    data: result,
   });
-})
-
+});
 
 const startNewSemester = catchAsync(async (req: Request, res: Response) => {
   // /:id/start-new-semester
   const { id } = req.params;
   const result = await SemesterRegistrationService.startNewSemester(id);
   sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Semester Started Successfully!',
+    data: result,
+  });
+});
+
+const getMySemesterRegCourses = catchAsync(
+  async (req: Request, res: Response) => {
+    const user = (req as any).user;
+    const result = await SemesterRegistrationService.getMySemesterRegCourses(
+      user.userId
+    );
+    sendResponse(res, {
       statusCode: httpStatus.OK,
       success: true,
-      message: 'Semester Started Successfully!',
-      data: result
-  });
-})
+      message: 'My registration courses data fetched!',
+      data: result,
+    });
+  }
+);
 
 export const SemesterRegistrationController = {
   insertIntoDB,
@@ -158,5 +173,6 @@ export const SemesterRegistrationController = {
   withdrawFromCourse,
   confirmMyRegistration,
   getMyRegistration,
-  startNewSemester
+  startNewSemester,
+  getMySemesterRegCourses
 };

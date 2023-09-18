@@ -82,7 +82,7 @@ model Student {
   studentEnrolledCourses             StudentEnrolledCourse[]
   studentEnrolledCourseMarks         StudentEnrolledCourseMark[]
   studentSemesterPayments            StudentSemesterPayment[]
-  studentAcademicInfos                StudentAcademicInfo[]
+  studentAcademicInfos               StudentAcademicInfo[]
 
   @@map("students")
 }
