@@ -164,6 +164,26 @@
             "date": 1695072454419,
             "name": "D:\\Next Level Journey\\Mission - 6\\university-management-core-service-starter\\logs\\winston\\errors\\phu-2023-19-09-03-error.log",
             "hash": "ed01037430c6365fd3ceefe8e149292f04ff28897f50f88c57b64ade9e462749"
+        },
+        {
+            "date": 1695076893777,
+            "name": "D:\\Next Level Journey\\Mission - 6\\university-management-core-service-starter\\logs\\winston\\errors\\phu-2023-19-09-04-error.log",
+            "hash": "ad86ae91863e592751634d6b60cb515e94169d634bad857a17a61a7f2beef38f"
+        },
+        {
+            "date": 1695079246476,
+            "name": "D:\\Next Level Journey\\Mission - 6\\university-management-core-service-starter\\logs\\winston\\errors\\phu-2023-19-09-05-error.log",
+            "hash": "a66de3deaa06e520b16a4133ad91fa1f320b12713c2c3791216e39fc7dd7783c"
+        },
+        {
+            "date": 1695116267236,
+            "name": "D:\\Next Level Journey\\Mission - 6\\university-management-core-service-starter\\logs\\winston\\errors\\phu-2023-19-09-15-error.log",
+            "hash": "f8451d290769881d78474723411413a84e4f219b8dc800b67d9da1f5317779f7"
+        },
+        {
+            "date": 1695118020247,
+            "name": "D:\\Next Level Journey\\Mission - 6\\university-management-core-service-starter\\logs\\winston\\errors\\phu-2023-19-09-16-error.log",
+            "hash": "3940c5daf7b01f09e72ab217647f00bc1b928eecb55d85777cebf680a3a8650c"
         }
     ],
     "hashType": "sha256"

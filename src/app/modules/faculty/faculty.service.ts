@@ -9,7 +9,10 @@ import {
   facultyRelationalFieldsMapper,
   facultySearchableFields,
 } from './faculty.constants';
-import { IFacultyFilterRequest, IFacultyMyCourseStudentsRequest } from './faculty.interface';
+import {
+  IFacultyFilterRequest,
+  IFacultyMyCourseStudentsRequest,
+} from './faculty.interface';
 
 const insertIntoDB = async (data: Faculty): Promise<Faculty> => {
   const result = await prisma.faculty.create({
@@ -273,7 +276,6 @@ const myCourses = async (
   return courseAndSchedule;
 };
 
-
 const getMyCourseStudents = async (
   filters: IFacultyMyCourseStudentsRequest,
   options: IPaginationOptions,
@@ -294,8 +296,6 @@ const getMyCourseStudents = async (
       filters.academicSemesterId = currentAcademicSemester.id;
     }
   }
-
-
 
   const offeredCourseSections =
     await prisma.studentSemesterRegistrationCourse.findMany({
@@ -323,7 +323,7 @@ const getMyCourseStudents = async (
       skip,
     });
 
-    console.log(offeredCourseSections);
+  console.log(offeredCourseSections);
 
   const students = offeredCourseSections.map(
     offeredCourseSection => offeredCourseSection.student
@@ -359,8 +359,6 @@ const getMyCourseStudents = async (
   };
 };
 
-
-
 export const FacultyService = {
   insertIntoDB,
   getAllFromDB,
@@ -370,5 +368,5 @@ export const FacultyService = {
   assignCourses,
   removeCourses,
   myCourses,
-  getMyCourseStudents
+  getMyCourseStudents,
 };

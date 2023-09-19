@@ -1,12 +1,25 @@
 import { AcademicSemester, Prisma } from '@prisma/client';
+import ApiError from '../../../errors/ApiError';
 import { paginationHelpers } from '../../../helpers/paginationHelper';
 import { IGenericResponse } from '../../../interfaces/common';
 import { IPaginationOptions } from '../../../interfaces/pagination';
 import prisma from '../../../shared/prisma';
-import { AcademicSemesterSearchableFields } from './academicSemester.constants';
+import {
+  AcademicSemesterSearchableFields,
+  academicSemesterTitleCodeMapper,
+} from './academicSemester.constants';
 import { IAcademicSemesterFilterRequest } from './academicSemester.interface';
 
-const insertIntoDb = async (academicSemesterData:AcademicSemester): Promise<AcademicSemester> => {
+const insertIntoDb = async (
+  academicSemesterData: AcademicSemester
+): Promise<AcademicSemester> => {
+  if (
+    academicSemesterTitleCodeMapper[academicSemesterData.title] !==
+    academicSemesterData.code
+  ) {
+    throw new ApiError(400, 'Invalid Semester Code');
+  }
+
   const result = await prisma.academicSemester.create({
     data: academicSemesterData,
   });
@@ -89,28 +102,27 @@ const updateOneInDB = async (
   payload: Partial<AcademicSemester>
 ): Promise<AcademicSemester> => {
   const result = await prisma.academicSemester.update({
-      where: {
-          id
-      },
-      data: payload
+    where: {
+      id,
+    },
+    data: payload,
   });
   return result;
 };
 
 const deleteByIdFromDB = async (id: string): Promise<AcademicSemester> => {
   const result = await prisma.academicSemester.delete({
-      where: {
-          id
-      }
+    where: {
+      id,
+    },
   });
   return result;
 };
-
 
 export const AcademicSemesterService = {
   insertIntoDb,
   getAllFromDb,
   getDataById,
   updateOneInDB,
-  deleteByIdFromDB
+  deleteByIdFromDB,
 };
