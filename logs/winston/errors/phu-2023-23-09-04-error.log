@@ -1,0 +1,167 @@
+Sat Sep 23 2023 4:26:2 } [PH] error: Cannot read properties of null (reading 'syncId')
+Sat Sep 23 2023 4:27:2 } [PH] error: Cannot read properties of null (reading 'syncId')
+Sat Sep 23 2023 4:27:46 } [PH] error: Cannot read properties of null (reading 'syncId')
+Sat Sep 23 2023 4:28:23 } [PH] error: Cannot read properties of null (reading 'syncId')
+Sat Sep 23 2023 4:32:33 } [PH] error: Cannot read properties of null (reading 'syncId')
+Sat Sep 23 2023 4:33:27 } [PH] error: Cannot read properties of null (reading 'syncId')
+Sat Sep 23 2023 4:37:59 } [PH] error: 
+Invalid `prisma.student.create()` invocation:
+
+{
+  data: {
+    studentId: "210100001",
+    firstName: "sabul",
+    lastName: "Hasan",
+    middleName: "Iqbal",
+    email: "fresh2@gmail.com",
+    contactNo: "5646546",
+    gender: "male",
+    bloodGroup: "B+",
+    academicSemesterId: undefined,
+    academicDepartmentId: "e39f5205-e6e0-4129-be0e-4506bc211b8e",
+    academicFacultyId: undefined,
++   academicSemester: {
++     create: AcademicSemesterCreateWithoutStudentsInput | AcademicSemesterUncheckedCreateWithoutStudentsInput,
++     connectOrCreate: AcademicSemesterCreateOrConnectWithoutStudentsInput,
++     connect: AcademicSemesterWhereUniqueInput
++   }
+  },
+  include: {
+    academicFaculty: true,
+    academicDepartment: true,
+    academicSemester: true
+  }
+}
+
+Argument `academicSemester` is missing.
+Sat Sep 23 2023 4:39:14 } [PH] error: 
+Invalid `prisma.student.create()` invocation:
+
+{
+  data: {
+    studentId: "210100001",
+    firstName: "sabul",
+    lastName: "Hasan",
+    middleName: "Iqbal",
+    email: "fresh2@gmail.com",
+    contactNo: "5646546",
+    gender: "male",
+    bloodGroup: "B+",
+    academicSemesterId: undefined,
+    academicDepartmentId: "e39f5205-e6e0-4129-be0e-4506bc211b8e",
+    academicFacultyId: undefined,
++   academicSemester: {
++     create: AcademicSemesterCreateWithoutStudentsInput | AcademicSemesterUncheckedCreateWithoutStudentsInput,
++     connectOrCreate: AcademicSemesterCreateOrConnectWithoutStudentsInput,
++     connect: AcademicSemesterWhereUniqueInput
++   }
+  },
+  include: {
+    academicFaculty: true,
+    academicDepartment: true,
+    academicSemester: true
+  }
+}
+
+Argument `academicSemester` is missing.
+Sat Sep 23 2023 4:40:16 } [PH] error: 
+Invalid `prisma.student.create()` invocation:
+
+{
+  data: {
+    studentId: "210100001",
+    firstName: "sabul",
+    lastName: "Hasan",
+    middleName: "Iqbal",
+    email: "fresh2@gmail.com",
+    contactNo: "5646546",
+    gender: "male",
+    bloodGroup: "B+",
+    academicSemesterId: undefined,
+    academicDepartmentId: undefined,
+    academicFacultyId: undefined,
++   academicSemester: {
++     create: AcademicSemesterCreateWithoutStudentsInput | AcademicSemesterUncheckedCreateWithoutStudentsInput,
++     connectOrCreate: AcademicSemesterCreateOrConnectWithoutStudentsInput,
++     connect: AcademicSemesterWhereUniqueInput
++   }
+  },
+  include: {
+    academicFaculty: true,
+    academicDepartment: true,
+    academicSemester: true
+  }
+}
+
+Argument `academicSemester` is missing.
+Sat Sep 23 2023 4:40:43 } [PH] error: 
+Invalid `prisma.student.create()` invocation:
+
+{
+  data: {
+    studentId: "210100001",
+    firstName: "gabul",
+    lastName: "Hasan",
+    middleName: "Iqbal",
+    email: "fresh2@gmail.com",
+    contactNo: "5646546",
+    gender: "male",
+    bloodGroup: "B+",
+    academicSemesterId: undefined,
+    academicDepartmentId: undefined,
+    academicFacultyId: undefined,
++   academicSemester: {
++     create: AcademicSemesterCreateWithoutStudentsInput | AcademicSemesterUncheckedCreateWithoutStudentsInput,
++     connectOrCreate: AcademicSemesterCreateOrConnectWithoutStudentsInput,
++     connect: AcademicSemesterWhereUniqueInput
++   }
+  },
+  include: {
+    academicFaculty: true,
+    academicDepartment: true,
+    academicSemester: true
+  }
+}
+
+Argument `academicSemester` is missing.
+Sat Sep 23 2023 4:42:43 } [PH] error: 
+Invalid `prisma.student.create()` invocation:
+
+{
+  data: {
+    studentId: "210100001",
+    firstName: "gabul",
+    lastName: "Hasan",
+    middleName: "Iqbal",
+    email: "fresh2@gmail.com",
+    contactNo: "5646546",
+    gender: "male",
+    bloodGroup: "B+",
+    academicSemesterId: undefined,
+    academicDepartmentId: undefined,
+    academicFacultyId: undefined,
++   academicSemester: {
++     create: AcademicSemesterCreateWithoutStudentsInput | AcademicSemesterUncheckedCreateWithoutStudentsInput,
++     connectOrCreate: AcademicSemesterCreateOrConnectWithoutStudentsInput,
++     connect: AcademicSemesterWhereUniqueInput
++   }
+  },
+  include: {
+    academicFaculty: true,
+    academicDepartment: true,
+    academicSemester: true
+  }
+}
+
+Argument `academicSemester` is missing.
+Sat Sep 23 2023 4:45:40 } [PH] error: Student does not exist
+Sat Sep 23 2023 4:46:42 } [PH] error: 
+Invalid `prisma.student.updateMany()` invocation:
+
+
+Foreign key constraint failed on the field: `students_academicDepartmentId_fkey (index)`
+Sat Sep 23 2023 4:47:50 } [PH] error: 
+Invalid `prisma.student.updateMany()` invocation:
+
+
+Foreign key constraint failed on the field: `students_academicDepartmentId_fkey (index)`

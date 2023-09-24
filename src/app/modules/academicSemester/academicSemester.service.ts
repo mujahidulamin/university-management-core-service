@@ -4,8 +4,11 @@ import { paginationHelpers } from '../../../helpers/paginationHelper';
 import { IGenericResponse } from '../../../interfaces/common';
 import { IPaginationOptions } from '../../../interfaces/pagination';
 import prisma from '../../../shared/prisma';
+import { RedisClient } from '../../../shared/redis';
 import {
   AcademicSemesterSearchableFields,
+  EVENT_ACADEMIC_SEMESTER_CREATED,
+  EVENT_ACADEMIC_SEMESTER_UPDATED,
   academicSemesterTitleCodeMapper,
 } from './academicSemester.constants';
 import { IAcademicSemesterFilterRequest } from './academicSemester.interface';
@@ -23,6 +26,13 @@ const insertIntoDb = async (
   const result = await prisma.academicSemester.create({
     data: academicSemesterData,
   });
+
+  if (result) {
+    await RedisClient.publish(
+      EVENT_ACADEMIC_SEMESTER_CREATED,
+      JSON.stringify(result)
+    );
+  }
 
   return result;
 };
@@ -107,6 +117,14 @@ const updateOneInDB = async (
     },
     data: payload,
   });
+
+  if (result) {
+    await RedisClient.publish(
+      EVENT_ACADEMIC_SEMESTER_UPDATED,
+      JSON.stringify(result)
+    );
+  }
+  
   return result;
 };
 

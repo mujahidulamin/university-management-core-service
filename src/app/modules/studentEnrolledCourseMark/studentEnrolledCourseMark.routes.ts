@@ -11,15 +11,21 @@ router.get(
   StudentEnrolledCourseMarkController.getAllFromDB
 );
 
+router.get(
+  '/my-marks',
+  auth(ENUM_USER_ROLE.STUDENT),
+  StudentEnrolledCourseMarkController.getMyCourseMarks
+);
+
+
 router.patch(
   '/update-marks',
   StudentEnrolledCourseMarkController.updateStudentMarks
 );
 
-
 router.patch(
-    '/update-final-marks',
-    StudentEnrolledCourseMarkController.updateFinalMarks
-)
+  '/update-final-marks',
+  StudentEnrolledCourseMarkController.updateFinalMarks
+);
 
 export const studentEnrolledCourseMarkRoutes = router;

@@ -143,18 +143,19 @@ const updateOneInDB = async (
   payload: Partial<OfferedCourse>
 ): Promise<OfferedCourse> => {
   const result = await prisma.offeredCourse.update({
-    where: {
-      id,
-    },
-    data: payload,
-    include: {
-      semesterRegistration: true,
-      course: true,
-      academicDepartment: true,
-    },
+      where: {
+          id
+      },
+      data: payload,
+      include: {
+          semesterRegistration: true,
+          course: true,
+          academicDepartment: true
+      }
   });
   return result;
 };
+
 
 const deleteByIdFromDB = async (id: string): Promise<OfferedCourse> => {
   const result = await prisma.offeredCourse.delete({

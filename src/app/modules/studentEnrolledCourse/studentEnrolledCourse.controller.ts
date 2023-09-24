@@ -23,7 +23,7 @@ const getAllFromDB = catchAsync(async (req: Request, res: Response) => {
     sendResponse(res, {
         statusCode: httpStatus.OK,
         success: true,
-        message: 'StudentEnrolledCourses fetched successfully',
+        message: 'Student Enrolled Courses fetched successfully',
         meta: result.meta,
         data: result.data
     });
